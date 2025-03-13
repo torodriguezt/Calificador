@@ -27,9 +27,19 @@ def evaluar_y_enviar(accuracy, precision, recall, f1):
 
     nombre_estudiante = input("🔤 Ingresa tu nombre completo o correo (obligatorio para guardar tu nota): ")
 
-    form_url = "https://docs.google.com/forms/d/e/1sWBNmNKN9f9F4nhLGFF57M8JH_pWWz_hl5fkwKhQJWo/formResponse"
-    ENTRY_NOMBRE = "entry.734737616"
-    ENTRY_NOTA = "entry.1759145663"
+    # ✅ ESTE es el URL correcto para enviar respuestas al formulario
+    form_url = "https://docs.google.com/forms/d/e/1FAIpQLSd_SYwMyw0i5lrSsSkPM9p7GkJ8ZHVQBJOXdU7A6mkowvGKKw/formResponse"
+
+    # 🔢 Estos campos debes ajustarlos a los entry reales del nuevo formulario
+    ENTRY_NOMBRE = "entry.734737616"       # ← este valor puede que ya no sea válido
+    ENTRY_NOTA = "entry.1759145663"         # ← este valor también puede haber cambiado
+
+    # 💡 Para que esto funcione bien debes:
+    # - Ir al formulario
+    # - Ir a modo "ver"
+    # - Abrir el formulario
+    # - Inspeccionar el campo nombre → obtienes el valor de `entry.xxxxxxx`
+    # - Inspeccionar el campo nota → igual
 
     form_data = {
         ENTRY_NOMBRE: nombre_estudiante,
